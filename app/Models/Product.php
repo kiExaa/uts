@@ -8,15 +8,18 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['category_id', 'name', 'description', 'price', 'stock', 'image'];
+    protected $fillable = [
+        'category_id', 'name', 'description',
+        'price', 'stock', 'image'
+    ];
 
-    // Relasi: produk milik 1 kategori
+    // Produk milik satu kategori
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    // Relasi: 1 produk punya banyak transaksi
+    // Satu produk punya banyak transaksi
     public function transactions()
     {
         return $this->hasMany(Transaction::class);

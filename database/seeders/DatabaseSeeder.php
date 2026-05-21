@@ -10,13 +10,13 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Buat 6 kategori
+        // 1. Buat 6 kategori terlebih dahulu
         Category::factory(6)->create();
 
-        // Buat 20 produk
+        // 2. Buat 20 produk (masing-masing link ke kategori acak)
         Product::factory(20)->create();
 
-        // Buat 30 transaksi
+        // 3. Buat 30 transaksi (masing-masing link ke produk acak)
         Transaction::factory(30)->create();
     }
 }

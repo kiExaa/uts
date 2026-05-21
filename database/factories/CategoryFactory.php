@@ -7,10 +7,15 @@ class CategoryFactory extends Factory
 {
     public function definition(): array
     {
-        $categories = ['Raket', 'Sepatu', 'Shuttlecock', 'Tas', 'Kaos', 'Celana', 'Grip', 'Stringing'];
+        $categories = [
+            'Raket', 'Sepatu Badminton', 'Shuttlecock',
+            'Tas Badminton', 'Kaos Olahraga', 'Celana Badminton',
+            'Grip', 'Stringing Service'
+        ];
+
         return [
             'name'        => $this->faker->unique()->randomElement($categories),
-            'description' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(10),
         ];
     }
 }

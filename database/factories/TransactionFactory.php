@@ -17,8 +17,11 @@ class TransactionFactory extends Factory
             'customer_name'    => $this->faker->name(),
             'quantity'         => $quantity,
             'total_price'      => $total,
-            'transaction_date' => $this->faker->dateTimeBetween('-3 months', 'now'),
-            'status'           => $this->faker->randomElement(['pending', 'success', 'cancelled']),
+            'transaction_date' => $this->faker->dateTimeBetween('-3 months', 'now')
+                                       ->format('Y-m-d'),
+            'status'           => $this->faker->randomElement([
+                                    'pending', 'success', 'cancelled'
+                                  ]),
         ];
     }
 }
